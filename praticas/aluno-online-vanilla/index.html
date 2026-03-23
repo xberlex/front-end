@@ -7,6 +7,12 @@
 </head>
 <body class="app-container">
 
+  <script>
+if(!localStorage.getItem("logado")){
+  window.location.href = "/login.html"
+}
+</script>
+
   <aside class="sidebar" >
     <figure class="logo">
       <img src="learn.svg" alt="Logotipo Aluno Online">
