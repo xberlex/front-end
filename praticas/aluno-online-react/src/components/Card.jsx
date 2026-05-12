@@ -8,8 +8,8 @@ function Card() {
                         Mural de Avisos
                     </h3>
                     <ul className="p-4 flex flex-col gap-2">
-                        <li>Inscrição para o projeto de extensão</li>
-                        <li>Eleição para representante de turma</li>
+                        <p>Inscrição para o projeto de extensão</p>
+                        <p>Eleição para representante de turma</p>
                     </ul>
                 </article>
             </section>
@@ -20,10 +20,10 @@ function Card() {
                         Calendário Acadêmico
                     </h3>
                     <ul className="p-4 flex flex-col gap-2">
-                        <li>23/02 - Início do período letivo 2026-1</li>
-                        <li>25/04 - Prazo final para aplicação da P1</li>
-                        <li>23/06 - Prazo final para aplicação da P2</li>
-                        <li>04/07 - Fim do período letivo 2026-1</li>
+                        <p>23/02 - Início do período letivo 2026-1</p>
+                        <p>25/04 - Prazo final para aplicação da P1</p>
+                        <p>23/06 - Prazo final para aplicação da P2</p>
+                        <p>04/07 - Fim do período letivo 2026-1</p>
                     </ul>
                 </article>
             </section>
@@ -34,11 +34,11 @@ function Card() {
                         Minhas Disciplinas
                     </h3>
                     <ul className="p-4 flex flex-col gap-2">
-                        <li>Construção de Frontend</li>
-                        <li>BI e Data Warehousing</li>
-                        <li>Manutenção de Software e DevOps</li>
-                        <li>Governança de TI</li>
-                        <li>Direitos Humanos e Ambientais</li>
+                        <p>Construção de Frontend</p>
+                        <p>BI e Data Warehousing</p>
+                        <p>Manutenção de Software e DevOps</p>
+                        <p>Governança de TI</p>
+                        <p>Direitos Humanos e Ambientais</p>
                     </ul>
                 </article>
             </section>
