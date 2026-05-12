@@ -1,214 +1,274 @@
-/* Variáveis e Reset */
 :root {
-    --cor-fundo: #e9e9e9;
-    --cor-texto: #303030;
-    --cor-card-header: #ececec;
-    --cor-borda: #d1d1d1;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: system-ui, sans-serif;
-    color: var(--cor-texto);
-    line-height: 1.6;
-    background-color: #fff;
-  }
-  
-  /* --- MOBILE --- */
-  
+  --cor-fundo: #f4f6f8;
+  --cor-sidebar: #ffffff;
+  --cor-texto: #303030;
+  --cor-texto-suave: #666666;
+  --cor-card-header: #eceff3;
+  --cor-borda: #d9dee5;
+  --cor-destaque: #2454a6;
+  --cor-destaque-clara: #e8f0ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--cor-sidebar);
+  border-right: 1px solid var(--cor-borda);
+  padding: 24px 18px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.sidebar .logo img {
+  width: 42px;
+  height: 42px;
+}
+
+.sidebar .logo h1 {
+  font-size: 1.25rem;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 28px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.topbar h1 {
+  font-size: 1.75rem;
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+}
+
+.page-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.page-section h2 {
+  font-size: 1.5rem;
+}
+
+.page-section > p {
+  color: var(--cor-texto-suave);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card,
+.table-card,
+.info-list {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+}
+
+.card h3,
+.table-card h3 {
+  background: var(--cor-card-header);
+  padding: 12px 16px;
+  font-size: 1rem;
+}
+
+.card ul,
+.info-list {
+  padding: 16px;
+}
+
+.card li {
+  margin-left: 18px;
+  margin-bottom: 6px;
+}
+
+.info-list {
+  display: grid;
+  gap: 12px;
+}
+
+.info-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-card {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid var(--cor-borda);
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background: var(--cor-card-header);
+  font-weight: 700;
+}
+
+td:not(:first-child),
+th:not(:first-child) {
+  text-align: center;
+}
+
+.button-link,
+#btn-entrar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--cor-destaque);
+  border-radius: 6px;
+  background: var(--cor-destaque);
+  color: #ffffff;
+  cursor: pointer;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 32px;
+}
+
+.login-card h1 {
+  margin-bottom: 8px;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.login-brand img {
+  width: 44px;
+  height: 44px;
+}
+
+.login-brand h1 {
+  margin-bottom: 0;
+}
+
+.login-card p {
+  color: var(--cor-texto-suave);
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+#login-form input {
+  width: 100%;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+#btn-entrar {
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
   .app-container {
-    display: flex;
-    flex-direction: column; /* Sidebar em cima ou escondida no mobile */
-  }
-  
-  .sidebar {
-    display: none;
-  }
-  
-  /* Ocultar lista de navegação no mobile para focar no conteúdo (opcional conforme imagem) */
-  .sidebar nav ul {
-    list-style: none;
-  }
-  
-  .sidebar .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-  }
-  
-  .main-content {
-    padding: 20px;
-    flex: 1;
-  }
-  
-  .topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .user-avatar {
-    width: 50px;
-    height: 50px;
-  }
-  
-  /* Organização com CSS Grid */
-  .dashboard-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* 1 cartão por linha no mobile */
-    gap: 20px;
-  }
-  
-  .card {
-    border: 1px solid var(--cor-borda);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .card h2 {
-    background-color: var(--cor-card-header);
-    padding: 12px 15px;
-    font-size: 1rem;
-  }
-  
-  .card ul {
-    padding: 15px;
-    list-style: none;
-  }
-  
-  .card ul li {
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-  }
-  
-  /* --- DESKTOP (Min-width: 768px) --- */
-  
-  @media (width >= 768px) {
-    .app-container {
-      flex-direction: row; /* Sidebar ao lado do conteúdo */
-      min-height: 100vh;
-    }
-  
-    .sidebar {
-      /* Faz a sidebar aparecer apenas no Desktop */
-      display: flex; 
-      flex-direction: column;
-      width: 250px;
-      background-color: var(--cor-fundo);
-      padding: 30px 20px;
-      border-right: 1px solid var(--cor-borda);
-    }
-  
-    .sidebar nav ul li {
-      padding: 10px 0;
-      border-bottom: 1px solid #ddd;
-      cursor: pointer;
-    }
-  
-    .sidebar nav ul li::before {
-      content: "• ";
-      color: var(--cor-texto);
-    }
-  
-    .dashboard-grid {
-      grid-template-columns: repeat(2, 1fr); /* 2 cartões por linha no desktop */
-    }
-  }
-
-  section{
-    background: #e9e9e9;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #d0d0d0;
-}
-
-  section h3{
-    background: #d3d3d3;
-    margin: 0;
-    padding: 10px;
-    border-radius: 10px 10px 0 0;
-}
-
-  /*
-  Tela de login
-  */
-  
-  /* Centraliza o corpo APENAS na tela de login */
-  body:has(#login-form) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #f5f5f5; /* Fundo cinza das fotos */
-    padding: 20px;
-  }
-  
-  /* Estiliza o <main> APENAS quando ele contém o formulário */
-  main:has(#login-form) {
-    background-color: #fff;
-    width: 100%;
-    max-width: 450px;
-    padding: 40px;
-    border: 1px solid var(--cor-borda);
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  /* Elementos internos do Login */
-  #login-form {
-    display: flex;
     flex-direction: column;
-    text-align: left;
-    margin-top: 20px;
   }
-  
-  #login-form label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-  }
-  
-  #login-form input {
+
+  .sidebar {
     width: 100%;
-    padding: 12px;
-    border: 1px solid var(--cor-borda);
-    border-radius: 4px;
-    margin-bottom: 4px;
-    font-size: 1rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--cor-borda);
+    position: static;
+    height: auto;
+    overflow-y: visible;
   }
-  
-  #login-form .error-message {
-    color: var(--cor-erro);
-    font-size: 0.85rem;
-    min-height: 20px;
-    margin-bottom: 10px;
+
+  .sidebar .logo {
+    margin-bottom: 18px;
   }
-  
-  #btn-entrar {
-    background-color: #e9e9e9;
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 10px;
+
+  .main-content {
+    padding: 22px;
   }
-  
-  #btn-entrar:hover {
-    background-color: #ddd;
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
   }
-  
-  /* Footer específico da página de login */
-  body:has(#login-form) footer {
-    position: absolute;
-    bottom: 20px;
-    font-size: 0.85rem;
-    color: #666;
-  }
+}

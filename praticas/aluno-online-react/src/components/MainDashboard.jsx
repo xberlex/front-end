@@ -1,13 +1,11 @@
 import Card from "./Card";
-import Topbar from "./Topbar";
 
 function Main (){
     return (
-        <main className="main-content">
-            <Topbar/>
-            <h2>Bem-Vindo ao Portal do Aluno</h2>
+        <section className="page-section">
+            <h2>Bem-vindo ao Portal do Aluno</h2>
             <Card/>
-        </main>
+        </section>
     );
 }
 

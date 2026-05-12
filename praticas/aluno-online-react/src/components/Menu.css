@@ -1,0 +1,27 @@
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    border-radius: 6px;
+    color: #303030;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu a.active {
+    background: #e8f0ff;
+    color: #2454a6;
+}
+
+@media (max-width: 900px) {
+    .menu ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

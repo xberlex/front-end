@@ -4,10 +4,9 @@ function Topbar() {
     return (
         <header className="topbar">
             <h1>Olá, Aluno!</h1>
-            <img src={avatar} alt="imagem do avatar" />
+            <img className="user-avatar" src={avatar} alt="Imagem do avatar" />
         </header>
     )
-
 }
 
 export default Topbar;
