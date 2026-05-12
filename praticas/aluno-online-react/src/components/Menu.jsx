@@ -1,3 +1,7 @@
+import ListagemDeFaltas from "../pages/Listagemdefaltas";
+import ListagemDeBoletos from "../pages/Listagemdeboletos";
+import ListagemDeNotas from "../pages/Listagemdenotas";
+import ListagemDeRequerimentos from "../pages/Listagemderequerimentos";
 
 function Menu({ navegaPara }) {
     return (
