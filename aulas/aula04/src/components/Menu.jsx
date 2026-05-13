@@ -1,20 +1,20 @@
 import './Menu.css';
+import { useNavigate, NavLink } from 'react-router';
 import { useAuth } from '../contexts/AuthContext';
-import { NavLink, useNavigate } from 'react-router';
 
 function Menu() {
     const usuarioId = 0;
-    
-    const { logout, usuario } = useAuth();
+
+    const { usuario, logout } = useAuth();
 
     const navigate = useNavigate();
 
     const handleSair = (e) => {
         e.preventDefault();
         logout();
-        navigate("/login");
-    }
-
+        navigate('/login');
+    };
+    
     return (
         <nav>
             <h1>Bem-vindo, {usuario.nome}!</h1>

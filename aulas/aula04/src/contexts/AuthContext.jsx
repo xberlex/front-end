@@ -3,16 +3,16 @@ import { createContext, useContext, useState } from "react";
 const AuthContext = createContext();
 
 function AuthProvider({ children }) {
-    const [usuario, setUsuario] = useState(null);
+    const [usuario, setUsuario] = useState({});
     const [logado, setLogado] = useState(false);
 
-    const login = () => {
-        setUsuario({ nome: "Marcos" });
+    const login = (dados) => {
+        setUsuario({nome: "Mariana"});
         setLogado(true);
     }
-    
-    const logout = ( dados ) => {
-        setUsuario(null);
+
+    const logout = () => {
+        setUsuario({});
         setLogado(false);
     }
 
