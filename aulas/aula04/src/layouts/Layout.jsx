@@ -1,9 +1,8 @@
-import { Outlet } from 'react-router';
-import Menu from '../pages/components/Menu';
+import { Outlet } from "react-router";
+import Menu from "../components/Menu";
 
 function Layout() {
-    return (
-    <>
+    return <>
     <aside>
         <Menu />
     </aside>
@@ -11,7 +10,6 @@ function Layout() {
         <Outlet />
     </main>
     </>
-    );
 }
 
 export default Layout;

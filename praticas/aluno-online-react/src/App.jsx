@@ -1,31 +1,26 @@
-import './App.css';
-import { useState } from 'react';
-
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import Notas from './pages/Notas';
-import Faltas from './pages/Faltas';
-import Boletos from './pages/Boletos';
-import Requerimentos from './pages/Requerimentos';
-
+import { Route, Routes } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import ListagemDeBoletos from "./pages/Listagemdeboletos";
+import ListagemDeFaltas from "./pages/Listagemdefaltas";
+import ListagemDeNotas from "./pages/Listagemdenotas";
+import ListagemDeRequerimentos from "./pages/Listagemderequerimentos";
+import Layout from "./layouts/Layouts";
 
 function App() {
-  const [pagina, setPagina] = useState(0);
-
-  switch (pagina) {
-    case 1:
-      return <Dashboard navegaPara={setPagina} />;
-    case 2:
-      return <Notas navegaPara={setPagina} />;
-    case 3:
-      return <Faltas navegaPara={setPagina} />;
-    case 4:
-      return <Boletos navegaPara={setPagina} />;
-    case 5:
-      return <Requerimentos navegaPara={setPagina} />;
-    default:
-      return <Login navegaPara={setPagina} />;
-  }
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="notas" element={<ListagemDeNotas />} />
+        <Route path="faltas" element={<ListagemDeFaltas />} />
+        <Route path="boletos" element={<ListagemDeBoletos />} />
+        <Route path="requerimentos" element={<ListagemDeRequerimentos />} />
+      </Route>
+    </Routes>
+  );
 }
+
+export default App;
 
 export default App;

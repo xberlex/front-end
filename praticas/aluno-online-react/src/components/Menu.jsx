@@ -1,21 +1,20 @@
-import ListagemDeFaltas from "../pages/Listagemdefaltas";
-import ListagemDeBoletos from "../pages/Listagemdeboletos";
-import ListagemDeNotas from "../pages/Listagemdenotas";
-import ListagemDeRequerimentos from "../pages/Listagemderequerimentos";
+import { NavLink } from "react-router-dom";
+import "./Menu.css";
 
-function Menu({ navegaPara }) {
+function Menu() {
     return (
-        <nav className="mt-16">
-            <ul className="list-disc pl-6 flex flex-col gap-6 text-[#303030] font-bold text-lg">
-                <li><a href="#" onClick={(e) => { e.preventDefault(); navegaPara(1); }}>Dashboard</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); navegaPara(2); }}>Notas</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); navegaPara(3); }}>Faltas</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); navegaPara(4); }}>Boletos</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); navegaPara(5); }}>Requerimentos</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); navegaPara(0); }}>Sair</a></li>
+        <nav className="menu">
+            <ul>
+                <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+                <li><NavLink to="/notas">Notas</NavLink></li>
+                <li><NavLink to="/faltas">Faltas</NavLink></li>
+                <li><NavLink to="/boletos">Boletos</NavLink></li>
+                <li><NavLink to="/requerimentos">Requerimentos</NavLink></li>
             </ul>
         </nav>
-    );
+    )
 }
+
+export default Menu;
 
 export default Menu;

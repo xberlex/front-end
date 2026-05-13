@@ -1,0 +1,21 @@
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    border-radius: 6px;
+    color: #303030;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu a.active {
+    background-color: #d9e7ff;
+    color: #2454a6;
+    font-weight: 700;
+}
