@@ -18,7 +18,7 @@ function Login() {
             password: senha,
         });
 
-        navigate("/");
+        navigate("/");     
     };
 
     return (
