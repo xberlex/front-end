@@ -3,6 +3,7 @@
   --cor-texto: #303030;
   --cor-card-header: #ececec;
   --cor-borda: #d1d1d1;
+  --cor-pagina: #f7f7f7;
 }
 
 * {
@@ -12,10 +13,16 @@
 }
 
 body {
-  background-color: #fff;
+  min-height: 100vh;
+  background-color: var(--cor-pagina);
   color: var(--cor-texto);
   font-family: system-ui, sans-serif;
   line-height: 1.6;
+}
+
+button,
+input {
+  font: inherit;
 }
 
 .app-container {
@@ -24,17 +31,17 @@ body {
 }
 
 .sidebar {
-  display: flex;
   position: sticky;
   top: 0;
+  display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 280px;
   height: 100vh;
   overflow-y: auto;
   flex-shrink: 0;
   background-color: var(--cor-fundo);
   border-right: 1px solid var(--cor-borda);
-  padding: 30px 20px;
+  padding: 32px 24px;
 }
 
 .sidebar nav ul {
@@ -44,8 +51,8 @@ body {
 .sidebar .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 28px;
+  gap: 12px;
+  margin-bottom: 32px;
   font-weight: bold;
 }
 
@@ -54,29 +61,65 @@ body {
   height: 42px;
 }
 
+.sidebar .logo h1 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
 .main-content {
   flex: 1;
   min-width: 0;
-  padding: 20px;
+  width: calc(100vw - 280px);
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.main-content > h1,
+.main-content > h2 {
+  margin-bottom: 16px;
+}
+
+.main-content > h1 {
+  font-size: 1.875rem;
+  line-height: 1.2;
+}
+
+.main-content > h2 {
+  font-size: 1.35rem;
+  line-height: 1.25;
 }
 
 .topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.topbar h1 {
+  font-size: 1.65rem;
+  line-height: 1.2;
+}
+
+.topbar p {
+  color: #666;
+  font-size: 0.95rem;
 }
 
 .user-avatar,
 .topbar img {
   width: 50px;
   height: 50px;
+  flex-shrink: 0;
 }
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+  align-items: stretch;
 }
 
 .card,
@@ -87,8 +130,12 @@ article {
   border-radius: 8px;
 }
 
+article {
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+
 .card h2,
-section h3,
 article h3 {
   background-color: var(--cor-card-header);
   padding: 12px 15px;
@@ -104,18 +151,12 @@ article ul {
 .card ul li,
 article ul li {
   margin-bottom: 8px;
-  font-size: 0.9rem;
-}
-
-section {
-  background: #e9e9e9;
-  border: 1px solid #d0d0d0;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  font-size: 0.95rem;
 }
 
 table {
   width: 100%;
+  min-width: 720px;
   border-collapse: collapse;
 }
 
@@ -129,16 +170,22 @@ th {
   background: #e9e9e9;
 }
 
+td:not(:first-child),
+th:not(:first-child) {
+  text-align: center;
+}
+
 .login-page {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100vw;
   min-height: 100vh;
-  padding: 20px;
+  padding: 32px;
+  background: var(--cor-pagina);
 }
 
-.login-card,
-main:has(#login-form) {
+.login-card {
   width: 100%;
   max-width: 450px;
   background-color: #fff;
@@ -168,6 +215,10 @@ main:has(#login-form) {
   text-align: left;
 }
 
+#login-form section {
+  margin-bottom: 10px;
+}
+
 #login-form label {
   display: block;
   margin-bottom: 5px;
@@ -178,7 +229,6 @@ main:has(#login-form) {
   width: 100%;
   border: 1px solid var(--cor-borda);
   border-radius: 4px;
-  margin-bottom: 10px;
   padding: 12px;
   font-size: 1rem;
 }
@@ -197,6 +247,25 @@ main:has(#login-form) {
   background-color: #ddd;
 }
 
+.login-footer {
+  margin-top: 20px;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.login-security-message {
+  margin-top: 18px;
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 767px) {
   .app-container {
     flex-direction: column;
@@ -208,6 +277,12 @@ main:has(#login-form) {
     height: auto;
     border-right: 0;
     border-bottom: 1px solid var(--cor-borda);
+    padding: 22px;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 22px;
   }
 
   .menu ul {
