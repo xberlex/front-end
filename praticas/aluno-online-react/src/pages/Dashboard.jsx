@@ -1,9 +1,6 @@
 import Main from "../components/MainDashboard";
 
 function Dashboard () {
-    return <Main/>;
+    return <Main />;
 }
-
-export default Dashboard;
-
 export default Dashboard;

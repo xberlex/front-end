@@ -5,7 +5,7 @@ function Menu() {
     return (
         <nav className="menu">
             <ul>
-                <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+                <li><NavLink to="/" end>Dashboard</NavLink></li>
                 <li><NavLink to="/notas">Notas</NavLink></li>
                 <li><NavLink to="/faltas">Faltas</NavLink></li>
                 <li><NavLink to="/boletos">Boletos</NavLink></li>
@@ -14,7 +14,5 @@ function Menu() {
         </nav>
     )
 }
-
-export default Menu;
 
 export default Menu;
