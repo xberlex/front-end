@@ -8,11 +8,11 @@ function Requerimentos() {
     ];
 
     return (
-        <section className="page-section">
-            <h2>Meus Requerimentos</h2>
-            <p>Solicitações online para a secretaria</p>
+        <>
+            <h1>Meus Requerimentos</h1>
+            <h2>Faça solicitações online para a secretaria</h2>
 
-            <article className="table-card">
+            <article>
                 <table>
                     <thead>
                         <tr>
@@ -32,7 +32,7 @@ function Requerimentos() {
                     </tbody>
                 </table>
             </article>
-        </section>
+        </>
     );
 }
 

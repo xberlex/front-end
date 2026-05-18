@@ -12,19 +12,18 @@ function Notas() {
     ];
 
     return (
-        <section className="page-section">
-            <h2>Minhas Notas</h2>
-            <p>Histórico de notas por semestre</p>
-
+        <>
+            <h1>Minhas Notas</h1>
+            <h2>Histórico de Notas por Semestre</h2>
             <TabelaNotas semestre="2026.1" notas={notas2026} />
             <TabelaNotas semestre="2025.2" notas={notas2025} />
-        </section>
+        </>
     );
 }
 
 function TabelaNotas({ semestre, notas }) {
     return (
-        <article className="table-card">
+        <article>
             <h3>{semestre}</h3>
             <table>
                 <thead>

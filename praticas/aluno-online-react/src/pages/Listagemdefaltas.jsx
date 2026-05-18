@@ -12,19 +12,18 @@ function Faltas() {
     ];
 
     return (
-        <section className="page-section">
-            <h2>Minhas Faltas</h2>
-            <p>Histórico de faltas por semestre</p>
-
+        <>
+            <h1>Minhas Faltas</h1>
+            <h2>Histórico de Faltas por Semestre</h2>
             <TabelaFaltas semestre="2026.1" faltas={faltas2026} />
             <TabelaFaltas semestre="2025.2" faltas={faltas2025} />
-        </section>
+        </>
     );
 }
 
 function TabelaFaltas({ semestre, faltas }) {
     return (
-        <article className="table-card">
+        <article>
             <h3>{semestre}</h3>
             <table>
                 <thead>

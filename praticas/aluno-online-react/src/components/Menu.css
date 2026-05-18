@@ -1,7 +1,7 @@
 .menu ul {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     list-style: none;
 }
 
@@ -15,13 +15,7 @@
 
 .menu a:hover,
 .menu a.active {
-    background: #e8f0ff;
+    background-color: #d9e7ff;
     color: #2454a6;
-}
-
-@media (max-width: 900px) {
-    .menu ul {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    font-weight: 700;
 }
