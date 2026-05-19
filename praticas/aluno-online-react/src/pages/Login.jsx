@@ -1,25 +1,34 @@
-import logo from "../assets/learn.svg";
-import FormLogin from "../components/FormLogin";
+import { useNavigate } from "react-router-dom";
 
-function LoginPage({ navegaPara }) {
+function Login() {
+    const navigate = useNavigate();
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        navigate("/dashboard");
+    }
+
     return (
-        <div className="min-h-screen bg-[#f5f5f5] flex flex-col items-center justify-center px-4 font-sans">
-            <div className="bg-white border border-gray-200 rounded-2xl p-10 w-full max-w-[420px] flex flex-col items-center shadow-sm">
-                <img
-                    src={logo}
-                    alt="Logo Aluno Online"
-                    className="w-14 h-14 mb-4"
-                />
-                <h1 className="text-2xl font-bold text-[#1a1a1a] mb-7">
-                    Aluno Online
-                </h1>
-                <FormLogin navegaPara={navegaPara} />
-            </div>
-            <p className="mt-6 text-sm text-gray-400">
-                © 2026. Todos os direitos reservados.
-            </p>
-        </div>
+        <main className="login-page">
+            <section className="login-card">
+                <div className="login-brand">
+                    <img src="/avatar.svg" alt="Avatar do aluno" />
+                    <h1>Aluno Online</h1>
+                </div>
+                <p>Entre para acessar seu portal acadêmico.</p>
+
+                <form id="login-form" onSubmit={handleSubmit}>
+                    <label htmlFor="matricula">Matrícula</label>
+                    <input id="matricula" name="matricula" type="text" placeholder="Digite sua matrícula" />
+
+                    <label htmlFor="senha">Senha</label>
+                    <input id="senha" name="senha" type="password" placeholder="Digite sua senha" />
+
+                    <button id="btn-entrar" type="submit">Entrar</button>
+                </form>
+            </section>
+        </main>
     );
 }
 
-export default LoginPage;
+export default Login;
