@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Requerimentos() {
     const requerimentos = [
         { tipo: "Revisão de Menção", data: "15/12/2025", situacao: "Indeferido" },
@@ -9,8 +11,15 @@ function Requerimentos() {
 
     return (
         <>
-            <h1>Meus Requerimentos</h1>
-            <h2>Faça solicitações online para a secretaria</h2>
+            <div className="page-header"> 
+                <div>
+                    <h1>Meus Requerimentos</h1>
+                    <h2>Faça solicitações online para a secretaria</h2>
+                </div>
+                <Link className="button-primary" to="/requerimentos/novo">
+                    Novo Requerimento
+                </Link>
+            </div>
 
             <article>
                 <table>
