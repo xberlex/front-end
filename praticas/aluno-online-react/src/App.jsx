@@ -5,7 +5,7 @@ import ListagemDeFaltas from "./pages/Listagemdefaltas";
 import ListagemDeNotas from "./pages/Listagemdenotas";
 import ListagemDeRequerimentos from "./pages/Listagemderequerimentos";
 import Layout from "./layouts/Layouts";
-import RequerimentoForm from "./forms/RequerimentoForm";
+import RequerimentoForm from "./forms/RequerimentoForm";       
  
 function App() {
   return (

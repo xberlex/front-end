@@ -12,7 +12,7 @@ function Requerimentos() {
     return (
         <>
             <div className="page-header"> 
-                <div>
+                <div>         
                     <h1>Meus Requerimentos</h1>
                     <h2>Faça solicitações online para a secretaria</h2>
                 </div>

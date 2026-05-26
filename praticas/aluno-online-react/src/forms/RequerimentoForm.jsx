@@ -69,7 +69,7 @@ function RequerimentoForm() {
                     {errors.descricao && <p className="form-error">{errors.descricao.message}</p>}
                 </div>
  
-                <div className="form-field form-field-inline">
+                <div className="form-field form-field-inline">       
                     <label htmlFor="dataRequerimento">Data do Requerimento</label>
                     <input
                         id="dataRequerimento"
