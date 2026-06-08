@@ -1,0 +1,26 @@
+{
+  "requerimentos": [
+    {
+      "id": "1",
+      "tipo": "Revisão de Menção",
+      "descricao": "Solicito revisão da menção lançada no semestre atual.",
+      "dataRequerimento": "08/06/2026",
+      "situacao": "Em análise"
+    },
+    {
+      "tipo": "Dispensa de Disciplina",
+      "descricao": "dispensa da disciplina governacia de TI\n",
+      "dataRequerimento": "08/06/2026",
+      "situacao": "Em análise",
+      "id": "i8xIQED3u-k"
+    },
+    {
+      "tipo": "Trancamento de Matrícula",
+      "descricao": "trancar front-end\n",
+      "dataRequerimento": "08/06/2026",
+      "situacao": "Em análise",
+      "id": "nkxXdP5p2aA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
