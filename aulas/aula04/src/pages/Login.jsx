@@ -6,7 +6,7 @@ function Login() {
 
     const navigate = useNavigate();
 
-    const handleEntrar = () => {
+    const handleEntrar = () => { 
         login({username: "marcosa@iesb.edu.br", password: "123456"});
         navigate("/");
     }
