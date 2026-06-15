@@ -4,10 +4,10 @@ const AuthContext = createContext();
 
 function AuthProvider({ children }) {
     const [usuario, setUsuario] = useState({});
-    const [logado, setLogado] = useState(false);
+    const [logado, setLogado] = useState(true);
 
-    const login = (dados) => {
-        setUsuario({nome: "Mariana"});
+    const login = () => {
+        setUsuario({nome: "Marcos"});
         setLogado(true);
     }
 
@@ -24,7 +24,7 @@ function AuthProvider({ children }) {
 }
 
 function useAuth() {
-    return useContext(AuthContext);
-}
+    return useContext(AuthContext);     
+} 
 
 export { AuthProvider, useAuth };

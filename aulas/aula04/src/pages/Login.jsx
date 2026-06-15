@@ -9,10 +9,10 @@ function Login() {
     const handleEntrar = () => {
         login({username: "Marcosa@iesb.edu.br", password: "123456"});
         navigate("/");
-    }     
+    };
 
     return (
-    <>
+    <>  
         <h1>Login</h1>
         <button onClick={handleEntrar}>Entrar</button>
     </>
