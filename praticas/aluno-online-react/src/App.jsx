@@ -20,9 +20,14 @@ function App() {
           <Route index element={<ListagemDeRequerimentos />} />
           <Route path="novo" element={<RequerimentoForm />} />
         </Route>
+        <Route path="requerimentos">
+          <Route index element={<ListagemDeRequerimentos />} />
+          <Route path="novo" element={<RequerimentoForm />} />
+        </Route>
       </Route>
     </Routes>
   );
 }
 
 export default App;
+

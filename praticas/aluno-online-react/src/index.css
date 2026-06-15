@@ -90,7 +90,7 @@ article {
 .card h2,
 section h3,
 article h3 {
-  background-color: var(--cor-card-header);
+  background-color: var(--cor-card-header); 
   padding: 12px 15px;
   font-size: 1rem;
 }
@@ -319,6 +319,10 @@ main:has(#login-form) {
   }
 
   .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field-inline {
     grid-template-columns: 1fr;
   }
 }
