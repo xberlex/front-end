@@ -9,9 +9,17 @@
 .menu button {
     display: block;
     width: 100%;
+<<<<<<< HEAD
+=======
+    border: 0;
+>>>>>>> 190d31bef76a4481f1fe01c58b553b041b485cf2
     border-radius: 6px;
+    background: transparent;
     color: #303030;
+    cursor: pointer;
+    font: inherit;
     padding: 10px 12px;
+    text-align: left;
     text-decoration: none;
     text-align: left;
 }

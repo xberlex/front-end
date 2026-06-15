@@ -20,7 +20,7 @@ function Menu() {
                 </li>
             </ul>
         </nav>
-    )
+    );
 }
 
 export default Menu;

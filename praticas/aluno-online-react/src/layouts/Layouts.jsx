@@ -10,7 +10,7 @@ function Layout() {
         <Topbar />
         <Outlet />
       </main>
-    </div>
+    </div> 
   );
 }
 

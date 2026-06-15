@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import ListagemDeBoletos from "./pages/Listagemdeboletos";
 import ListagemDeFaltas from "./pages/Listagemdefaltas";
@@ -12,8 +13,19 @@ import { useAuth } from "./contexts/AuthContext";
 function App() {
   const { autenticado } = useAuth();
 
+  const { autenticado } = useAuth();
+
   return (
     <Routes>
+      <Route
+        path="/login"
+        element={autenticado ? <Navigate to="/" replace /> : <Login />}
+      />
+
+      <Route
+        path="/"
+        element={autenticado ? <Layout /> : <Navigate to="/login" replace />}
+      >
       <Route
         path="/login"
         element={autenticado ? <Navigate to="/" replace /> : <Login />}
