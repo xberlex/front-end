@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { cadastrarRequerimento } from "../services/requerimentoService";
 
 function RequerimentoForm() {
+    const navigate = useNavigate();
     const dataRequerimento = new Date().toLocaleDateString("pt-BR");
     const {
         register,
@@ -16,12 +18,17 @@ function RequerimentoForm() {
         },
     });
 
-    function salvarRequerimento(dados) {
-        console.log("Novo requerimento:", {
+    async function salvarRequerimento(dados) {
+        const novoRequerimento = {
             ...dados,
             dataRequerimento,
-        });
+            situacao: "Em análise",
+        };
+
+        const requerimentoCriado = await cadastrarRequerimento(novoRequerimento);
+        console.log("Novo requerimento:", requerimentoCriado);
         reset();
+        navigate("/requerimentos");
     }
 
     return (
@@ -39,10 +46,10 @@ function RequerimentoForm() {
                     <select
                         id="tipo"
                         {...register("tipo", {
-                            required: "Tipo é obrigatório",
+                            required: "Tipo é obrigatório.",
                         })}
                     >
-                        <option value="">Selecione uma opção</option>
+                        <option value="">Selecione um tipo...</option>
                         <option value="Revisão de Menção">Revisão de Menção</option>
                         <option value="Dispensa de Disciplina">Dispensa de Disciplina</option>
                         <option value="Trancamento de Matrícula">Trancamento de Matrícula</option>
@@ -57,9 +64,8 @@ function RequerimentoForm() {
                     <textarea
                         id="descricao"
                         rows="6"
-                        placeholder="Descreva sua solicitação"
                         {...register("descricao", {
-                            required: "Descrição é obrigatória",
+                            required: "Descrição é obrigatório.",
                             minLength: {
                                 value: 10,
                                 message: "A descrição deve ter pelo menos 10 caracteres.",
@@ -68,8 +74,8 @@ function RequerimentoForm() {
                     />
                     {errors.descricao && <p className="form-error">{errors.descricao.message}</p>}
                 </div>
- 
-                <div className="form-field form-field-inline">       
+
+                <div className="form-field form-field-inline">
                     <label htmlFor="dataRequerimento">Data do Requerimento</label>
                     <input
                         id="dataRequerimento"
@@ -88,9 +94,7 @@ function RequerimentoForm() {
                 </div>
 
                 <div className="form-actions">
-                    <Link to="/requerimentos">
-                        Cancelar
-                    </Link>
+                    <Link to="/requerimentos">Cancelar</Link>
                     <button type="submit" disabled={isSubmitting}>
                         Salvar
                     </button>
