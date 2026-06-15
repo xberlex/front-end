@@ -8,7 +8,7 @@ function Topbar({ titulo }) {
     return (
         <header className="topbar">
             <div>
-                <h1>{titulo || `Olá, ${nome}!`}</h1>
+                <h1>{titulo || `Ola, ${nome}!`}</h1>
                 <p>{usuario?.email}</p>
             </div>
             <img src={avatar} alt="imagem do avatar" className="user-avatar" />

@@ -5,6 +5,7 @@ import ListagemDeFaltas from "./pages/Listagemdefaltas";
 import ListagemDeNotas from "./pages/Listagemdenotas";
 import ListagemDeRequerimentos from "./pages/Listagemderequerimentos";
 import Layout from "./layouts/Layouts";
+import RequerimentoForm from "./forms/RequerimentoForm";
 import Login from "./pages/Login";
 import { useAuth } from "./contexts/AuthContext";
 
@@ -31,19 +32,14 @@ function App() {
           <Route index element={<ListagemDeRequerimentos />} />
           <Route path="novo" element={<RequerimentoForm />} />
         </Route>
-        <Route path="requerimentos">
-          <Route index element={<ListagemDeRequerimentos />} />
-          <Route path="novo" element={<RequerimentoForm />} />
-        </Route>
       </Route>
 
       <Route
         path="*"
         element={<Navigate to={autenticado ? "/" : "/login"} replace />}
       />
-    </Routes> 
+    </Routes>
   );
 }
 
 export default App;
-
