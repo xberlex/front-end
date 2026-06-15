@@ -12,7 +12,7 @@ const AuthContext = createContext(null);
 function AuthProvider({ children }) {
     const [sessao, setSessao] = useState(() => obterSessao());
 
-    const autenticado = Boolean(sessao?.token);
+    const autenticado = Boolean(sessao?.token); 
     const usuario = sessao?.usuario || null;
     const token = sessao?.token || null;
 
