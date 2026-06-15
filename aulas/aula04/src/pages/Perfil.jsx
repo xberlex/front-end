@@ -40,7 +40,7 @@ function Perfil() {
                 </div>
                 <div>
                     <label htmlFor="email"> Email </label>
-                    <input type="email" id="email" 
+                    <input type="email" id="email"  
                     {...register("email", validadores.email)} />
                     {errors?.email && <p>{errors.email.message}</p>}
                 </div>

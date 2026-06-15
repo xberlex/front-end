@@ -12,7 +12,8 @@ function InputMatricula({ matricula, erro, mudaValor }) {
                     }`}
                 value={matricula}
                 onChange={mudaValor}
-                type="email"
+                type="text"
+                inputMode="email"
                 id="email"
                 name="email"
                 autoComplete="email"

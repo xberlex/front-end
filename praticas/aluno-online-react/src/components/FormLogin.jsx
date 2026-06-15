@@ -3,14 +3,14 @@ import InputMatricula from "./InputMatricula";
 import InputSenha from "./InputSenha";
 import InputSubmit from "./InputSubmit";
 
-function FormLogin({ navegaPara }) {
+function FormLogin({ onLogin }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [emailErro, setEmailErro] = useState("");
     const [senhaErro, setSenhaErro] = useState("");
 
-    const trataSubmit = (e) => {
-        e.preventDefault();
+    const trataSubmit = (event) => {
+        event.preventDefault();
         let temErro = false;
 
         if (!email) {
@@ -34,21 +34,24 @@ function FormLogin({ navegaPara }) {
         }
 
         if (!temErro) {
-            navegaPara(1);
+            onLogin({
+                nome: email.split("@")[0],
+                email,
+            });
         }
     };
 
     return (
-        <form onSubmit={trataSubmit} className="flex flex-col gap-4 w-full">
+        <form id="login-form" onSubmit={trataSubmit}>
             <InputMatricula
                 matricula={email}
                 erro={emailErro}
-                mudaValor={(e) => setEmail(e.target.value)}
+                mudaValor={(event) => setEmail(event.target.value)}
             />
             <InputSenha
                 senha={senha}
                 erro={senhaErro}
-                mudaValor={(e) => setSenha(e.target.value)}
+                mudaValor={(event) => setSenha(event.target.value)}
             />
             <InputSubmit texto="Entrar" />
         </form>
