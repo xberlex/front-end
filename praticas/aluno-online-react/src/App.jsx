@@ -5,7 +5,8 @@ import ListagemDeFaltas from "./pages/Listagemdefaltas";
 import ListagemDeNotas from "./pages/Listagemdenotas";
 import ListagemDeRequerimentos from "./pages/Listagemderequerimentos";
 import Layout from "./layouts/Layouts";
-
+import RequerimentoForm from "./forms/RequerimentoForm";       
+ 
 function App() {
   return (
     <Routes>
@@ -15,7 +16,10 @@ function App() {
         <Route path="notas" element={<ListagemDeNotas />} />
         <Route path="faltas" element={<ListagemDeFaltas />} />
         <Route path="boletos" element={<ListagemDeBoletos />} />
-        <Route path="requerimentos" element={<ListagemDeRequerimentos />} />
+        <Route path="requerimentos">
+          <Route index element={<ListagemDeRequerimentos />} />
+          <Route path="novo" element={<RequerimentoForm />} />
+        </Route>
       </Route>
     </Routes>
   );
