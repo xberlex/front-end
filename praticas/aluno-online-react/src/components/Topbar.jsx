@@ -1,10 +1,17 @@
 import avatar from '../assets/avatar.svg';
+import { useAuth } from '../contexts/AuthContext';
 
 function Topbar(props) {
+    const { usuario } = useAuth();
+    const titulo = props.titulo || "Dashboard";
+
     return (
-        <header className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold text-[#202020]">{props.titulo}</h1>
-            <img src={avatar} alt="imagem do avatar" className="w-12 h-12" />
+        <header className="topbar">
+            <div>
+                <h1>{titulo}</h1>
+                <p>Olá, {usuario?.nome || "Aluno"}</p>
+            </div>
+            <img src={avatar} alt="imagem do avatar" />
         </header>
     );
 }

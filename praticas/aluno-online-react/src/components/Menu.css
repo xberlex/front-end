@@ -5,16 +5,27 @@
     list-style: none;
 }
 
-.menu a {
+.menu a,
+.menu button {
     display: block;
+    width: 100%;
     border-radius: 6px;
     color: #303030;
     padding: 10px 12px;
     text-decoration: none;
+    text-align: left;
+}
+
+.menu button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
 }
 
 .menu a:hover,
-.menu a.active {
+.menu a.active,
+.menu button:hover {
     background-color: #d9e7ff;
     color: #2454a6;
     font-weight: 700;

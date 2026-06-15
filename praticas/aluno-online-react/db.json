@@ -1,0 +1,19 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Marcos",
+      "email": "marcos@iesb.edu.br",
+      "senha": "123456"
+    }
+  ],
+  "requerimentos": [
+    {
+      "id": "1",
+      "tipo": "Revisão de Menção",
+      "descricao": "Solicito revisão da menção lançada no semestre atual.",
+      "dataRequerimento": "15/06/2026",
+      "situacao": "Em análise"
+    }
+  ]
+}
